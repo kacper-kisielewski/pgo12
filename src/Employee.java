@@ -10,11 +10,15 @@ public class Employee extends User {
         return new Client(firstName, lastName, account);
     }
 
-    public BankAccount openBankAccount(double balance, int numberOfTransactions) {
-        return new BankAccount(balance, numberOfTransactions);
+    public BankAccount openBankAccount() {
+        return new BankAccount();
     }
 
-    public void makeTransfer(BankAccount receiverAccount, Client client, double amount) {
-        //
+    public BankAccount openBankAccount(double balance) {
+        return new BankAccount(balance);
+    }
+
+    public Transaction makeTransfer(Client client, BankAccount receiverAccount, double amount) throws AccountOperationException {
+        return new Transaction(client.getAccount(), receiverAccount, amount);
     }
 }

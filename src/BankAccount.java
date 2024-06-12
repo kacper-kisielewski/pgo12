@@ -2,23 +2,25 @@ public class BankAccount implements AccountOperations {
     double balance = 0;
     int numberOfTransactions = 0;
 
-    public BankAccount(double balance, int numberOfTransactions) {
+    public BankAccount() {
+    }
+
+    public BankAccount(double balance) {
         this.balance = balance;
-        this.numberOfTransactions = numberOfTransactions;
     }
 
     @Override
     public double checkBalance() {
-        return 0;
+        return this.balance;
     }
 
     @Override
-    public void makeTransfer(AccountOperations receiverAccount, double amount) throws AccountOperationException {
-
+    public Transaction makeTransfer(BankAccount receiverAccount, double amount) throws AccountOperationException {
+        return new Transaction(this, receiverAccount, amount);
     }
 
     @Override
     public void makeDeposit(double amount) {
-
+        this.balance += amount;
     }
 }

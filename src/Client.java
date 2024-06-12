@@ -12,11 +12,19 @@ public class Client extends User {
         return account.checkBalance();
     }
 
-    public void makeTransfer(AccountOperations receiverAccount, double amount) throws AccountOperationException {
-        account.makeTransfer(receiverAccount, amount);
+    public Transaction makeTransfer(BankAccount receiverAccount, double amount) throws AccountOperationException {
+        return account.makeTransfer(receiverAccount, amount);
+    }
+
+    public Transaction makeTransfer(Client receiverAccount, double amount) throws AccountOperationException {
+        return account.makeTransfer(receiverAccount.getAccount(), amount);
     }
 
     public void makeDeposit(double amount) {
         account.makeDeposit(amount);
+    }
+
+    public BankAccount getAccount() {
+        return account;
     }
 }
