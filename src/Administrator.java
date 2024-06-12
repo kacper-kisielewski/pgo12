@@ -9,5 +9,6 @@ public class Administrator extends Employee {
 
     public void removeEmployee(Employee employee) {
         users.remove(employee);
-    };
+    }
+
 }

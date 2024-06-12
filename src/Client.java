@@ -1,6 +1,6 @@
 public class Client extends User {
-    private BankAccount account;
     int ID;
+    private final BankAccount account;
 
     public Client(String firstName, String lastName, BankAccount account) {
         super(firstName, lastName);
