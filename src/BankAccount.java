@@ -2,6 +2,11 @@ public class BankAccount implements AccountOperations {
     double balance = 0;
     int numberOfTransactions = 0;
 
+    public BankAccount(double balance, int numberOfTransactions) {
+        this.balance = balance;
+        this.numberOfTransactions = numberOfTransactions;
+    }
+
     @Override
     public double checkBalance() {
         return 0;
